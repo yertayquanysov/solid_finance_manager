@@ -1,2 +1,6 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# Expanse manager Dart console app
+
+Todo:
+
+1. Add expanse, income
+2. Report to email
