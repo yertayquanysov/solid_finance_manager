@@ -1,3 +1,3 @@
 abstract class FinanceReport {
-  void send();
+  void send(String email);
 }
