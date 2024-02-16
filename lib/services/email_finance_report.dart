@@ -1,15 +1,15 @@
 import 'package:solid_finance_manager/interface/finance_report.dart';
-import 'package:solid_finance_manager/interface/transaction_repo_interface.dart';
+import 'package:solid_finance_manager/interface/finance_report_generator.dart';
 
 class EmailFinanceReport extends FinanceReport {
-  EmailFinanceReport(this._transactionRepository);
+  EmailFinanceReport(this._financeReportGenerator);
 
-  final TransactionRepository _transactionRepository;
+  final FinanceReportGenerator _financeReportGenerator;
 
   @override
   void send() {
-    _transactionRepository.getAll();
+    final generatedReport = _financeReportGenerator.generate();
 
-    // TODO: send to email
+    print("To send: $generatedReport");
   }
 }
