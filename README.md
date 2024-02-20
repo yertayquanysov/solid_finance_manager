@@ -1,7 +1,6 @@
 # Expanse manager Dart console app
 
-Todo:
+**Todo:**
 
-1. Add expanse, income
+1. Add expense, income
 2. Report to email
-3. 
