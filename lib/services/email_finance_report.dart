@@ -13,7 +13,9 @@ class EmailFinanceReport extends FinanceReport {
 
   @override
   void send(String email) {
-    final generatedReport = _financeReportGenerator.generate();
-    _emailSender.send(email, generatedReport);
+    final generatedFinanceReport = _financeReportGenerator.generate();
+    _emailSender.send(email, generatedFinanceReport);
+
+    print("Finance report send done.");
   }
 }

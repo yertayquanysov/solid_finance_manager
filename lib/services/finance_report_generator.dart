@@ -8,8 +8,7 @@ class FinanceReportGeneratorImpl extends FinanceReportGenerator {
 
   @override
   String generate() {
-    _transactionRepository.getAll();
-
-    return "Expanse: 11, Income: 230";
+    final transactions = _transactionRepository.getAll();
+    return transactions.toList().toString();
   }
 }
