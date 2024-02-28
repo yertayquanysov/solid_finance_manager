@@ -7,15 +7,10 @@ import 'package:solid_finance_manager/transaction_repository.dart';
 
 void main(List<String> arguments) {
   final transactionRepository = TransactionRepositoryImpl();
-  final usd = Currency(id: 1, code: "USD");
 
-  transactionRepository.add(
-    Income(
-      id: 1,
-      summa: 1000,
-      currency: usd,
-      date: DateTime.now(),
-    ),
+  final usd = Currency(
+    id: 1,
+    code: "USD",
   );
 
   transactionRepository.add(
@@ -27,15 +22,18 @@ void main(List<String> arguments) {
     ),
   );
 
-  final allTransactions = transactionRepository.getAll();
+  transactionRepository.add(
+    Income(
+      id: 1,
+      summa: 1000,
+      currency: usd,
+      date: DateTime.now(),
+    ),
+  );
 
   final reportGenerator = FinanceReportGeneratorImpl(transactionRepository);
   final emailSender = EmailSenderImpl();
   final emailReportSender = EmailFinanceReport(reportGenerator, emailSender);
 
   emailReportSender.send("yertay.k@gmail.com");
-
-  for (var transaction in allTransactions) {
-    print(transaction.toString());
-  }
 }
