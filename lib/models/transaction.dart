@@ -24,21 +24,3 @@ abstract class Transaction {
     }.toString();
   }
 }
-
-class Expanse extends Transaction {
-  Expanse({
-    required super.id,
-    required super.summa,
-    required super.currency,
-    required super.date,
-  });
-}
-
-class Income extends Transaction {
-  Income({
-    required super.id,
-    required super.summa,
-    required super.currency,
-    required super.date,
-  });
-}

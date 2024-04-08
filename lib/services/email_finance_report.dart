@@ -16,6 +16,6 @@ class EmailFinanceReport extends FinanceReport {
     final generatedFinanceReport = _financeReportGenerator.generate();
     _emailSender.send(email, generatedFinanceReport);
 
-    print("Finance report send done.");
+    print("Sending finance report to $email...");
   }
 }
